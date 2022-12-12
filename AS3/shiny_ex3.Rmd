@@ -1,0 +1,122 @@
+---
+title: ""
+output: html_document
+runtime: shiny
+---
+
+```{r setup, echo=FALSE}
+library(ggplot2)
+library(scales)
+library(dplyr)
+
+             covid_df <- read.csv('E:/Personal_Files/Dariush/monash/visual/AS3/new/time_series_covid19_ALL_global.csv', header=TRUE)
+
+shinyApp(
+    ui = fluidPage(
+        selectInput("CounryDropDown", "Please make a selection", choices = sort(unique(covid_df$Country)), selected = "Australia"),
+        
+        uiOutput("secondSelection"),
+        uiOutput("thirdSelection"),
+        
+        plotOutput(outputId = "distPlot")
+
+),
+
+
+server <- function(input, output){
+  
+  covid_df <- read.csv('E:/Personal_Files/Dariush/monash/visual/AS3/new/time_series_covid19_ALL_global.csv', header=TRUE)
+  
+  #stateChoices = as.character(covid_df[covid_df$Country==input$CounryDropDown,"State"])
+  output$secondSelection <- renderUI({
+                selectInput("Staten", "State:", choices = as.character(covid_df[covid_df$Country==input$CounryDropDown,"State"]), selected = "") 
+        })
+  
+  output$thirdSelection <- renderUI({
+                selectInput("Cat", "Category:", choices = c("Confirmed", "Death", "Recovered"), selected = "Confirmed") 
+        })
+  
+  output$distPlot <- renderPlot({
+
+    
+  covid_df <- covid_df[covid_df$Country == input$CounryDropDown,]
+  covid_df <- covid_df[covid_df$State == input$Staten,]
+
+ll <- ""
+for (ix in 1:nrow(covid_df)) {
+  if (ix == nrow(covid_df)) {
+    cc <- paste("A", ",", covid_df$State[ix], ",", "Confirmed", ",", covid_df$confirmed_inc_count[ix], ",",  
+                covid_df$confirmed_date[ix], '\n', sep="")
+    ll <- c(ll, cc)
+    cc <- paste("B", ",", covid_df$State[ix], ",", "Recovered", ",", covid_df$recovered_inc_count[ix], ",", 
+                covid_df$confirmed_date[ix], '\n', sep="")
+    ll <- c(ll, cc)
+    cc <- paste("C", ",", covid_df$State[ix], ",", "Death", ",", covid_df$death_inc_count[ix], ",", 
+                covid_df$confirmed_date[ix], sep="")
+    ll <- c(ll, cc)
+  }
+  else {
+    cc <- paste("A", ",", covid_df$State[ix], ",", "Confirmed", ",", covid_df$confirmed_inc_count[ix], ",", 
+                covid_df$confirmed_date[ix], '\n', sep="")
+    ll <- c(ll, cc)
+    cc <- paste("B", ",", covid_df$State[ix], ",", "Recovered", ",", covid_df$recovered_inc_count[ix], ",", 
+                covid_df$confirmed_date[ix], '\n', sep="")
+    ll <- c(ll, cc)
+    cc <- paste("C", ",", covid_df$State[ix], ",", "Death", ",", covid_df$death_inc_count[ix], ",", 
+                covid_df$confirmed_date[ix], '\n', sep="")
+    ll <- c(ll, cc)
+  }
+}
+
+fc <- file('E:/Personal_Files/Dariush/monash/visual/AS3/aus_confdd.csv')
+writeLines(ll, fc, sep='')
+close(fc)
+
+
+
+covid_df <- read.csv('E:/Personal_Files/Dariush/monash/visual/AS3/aus_confdd.csv', header=FALSE)
+names(covid_df) = c('Type', 'State', 'Category', 'Count',  'When')
+
+
+covid_df %>%
+  mutate(When=as.Date(When, format = "%d/%m/%Y"))
+
+covid_df <- select(covid_df, Category, When, Count)
+c1_agg <- aggregate(. ~ When+Category, FUN = sum, data = covid_df)
+
+c1_agg$When <- as.Date(c1_agg$When, format = "%d-%m-%Y")
+
+c1_agg <- c1_agg[order(c1_agg$When, decreasing = FALSE), ]
+write.csv(c1_agg, "E:/Personal_Files/Dariush/monash/visual/AS3/aggis.csv")
+
+ state <- reactiveValues()
+
+
+if (input$Cat == "Confirmed") {Col = "blue"}
+else if (input$Cat == "Death") {Col = "red"}
+else {Col = "green"}
+
+      
+    
+      myplot <- 
+        p <- ggplot(filter(c1_agg, Category == input$Cat), aes(x = When, y = Count)) +  
+          geom_bar(stat = "identity" , fill=Col) +
+          xlab("") +
+          ylab("Cases") +
+          scale_x_date(breaks="3 days", labels = date_format("%d-%B-%Y")) +
+          theme_bw()
+    
+        #c1_agg$Count=as.numeric(levels(c1_agg$Count))[c1_agg$Count]
+        p <- p + scale_y_continuous(labels = comma)
+        p <- p + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+        
+        p
+    
+
+    })
+},
+  options = list(height = 700)
+)
+```
+
+```

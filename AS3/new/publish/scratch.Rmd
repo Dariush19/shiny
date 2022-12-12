@@ -1,0 +1,393 @@
+---
+pagetitle: COVID-19
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+#install.packages('rsconnect')
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<h3><center>COVID-19<br>Understanding The Spread & Extent<br>as at 13th April 2020</center></h3>
+<p>&nbsp;</p>
+<h4>Overview</h4>
+<p>The COVID19 is the biggest challenge to human existence in the past 100 years. In this project, we use the data made <a href="https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases">publicly</a> available to analyze the geographic spread and its impact. 
+We analyse the data in terms of:
+<ul>
+<li>Confirmed cases</li>
+<li>Fatal cases</li>
+<li>Recovered cases</li>
+</ul>
+The data set we use in this page is obtained from the three data sets above but also put through a series of transformations (data wrangling) for cleansing and ease of visualisation. Refer to <a href="covid_wrangle_dariush.py">this python program</a> for how this process is done.
+</p>
+
+<h4>A Global View</h4>
+<p>
+We start with a high level view of the spred and extent of the virus across the world. We can quickly see that the spread is global with China in East Asia, Iran in middle east followed by a bigger impact on Eurpoe and a much greater impact on the US.  </p>
+```{r worldView, echo=FALSE, message=FALSE,  warning=FALSE, results='hide', COMMENT=FALSE}
+library(rworldmap)
+library(RColorBrewer)
+
+covid_df <- read.csv('time_series_covid19_ALL_global.csv', header=TRUE)
+
+covid_ag <- aggregate(confirmed_inc_count ~ Country, FUN = sum, data = covid_df)
+N = 100
+myMap <- joinCountryData2Map( covid_ag, 
+                              nameJoinColumn="Country", 
+                              joinCode="NAME" )
+
+colourPalette <- brewer.pal(N,"OrRd")
+
+mapCountryData( myMap,
+                nameColumnToPlot='confirmed_inc_count',
+                catMethod='fixedWidth',
+                colourPalette=colourPalette, 
+                numCats=100,
+                mapTitle = "")
+```
+<p>The following table provides a tabuar quantitative view of the above limited to the top 15 countries ordered on confirmed cases. Whilst it does provide quantitative measures of each category for the top 15 infected nations, it is difficult to draw conclusion using the three categories across the countries. This is a challenge we have with respect to multi-variate data such as this. </p>
+
+```{r global_numbers, echo=FALSE, message=FALSE, warning=FALSE, comment=NA}
+library(dplyr)
+library(knitr)
+
+covid_df <- read.csv('time_series_covid19_ALL_global.csv', header=TRUE)
+c1 = select(covid_df, Country, confirmed_inc_count, death_inc_count, recovered_inc_count)
+c1_agg <- aggregate(. ~ Country, FUN = sum, data = c1)
+c1_ord <- c1_agg[order(-c1_agg$confirmed_inc_count),]
+c1_ord['Death Ratio'] <- round((c1_ord['death_inc_count'] / c1_ord['confirmed_inc_count']), digits=2)
+c1_ord['Recovered Ratio'] <- round((c1_ord['recovered_inc_count'] / c1_ord['confirmed_inc_count']), digits=2) 
+top10 = head(c1_ord, n=15)
+
+row.names(top10) = NULL
+my_knit <- knitr::kable(top10, col.names = c("Country", "Confirmed Cases", "Death", "Recovered", "Death Ratio", "Recovered Ratio"))
+print(my_knit)
+```
+<h4>Total Number of Cases</h4>
+<p>
+The following tables provides a total aggregate of the three categories across the world.
+</p> 
+
+```{r total_cases, echo=FALSE, message=FALSE, warning=FALSE, comment=NA}
+covid_df <- read.csv('time_series_covid19_ALL_global.csv', header=TRUE)
+
+c1 = select(covid_df, confirmed_inc_count, death_inc_count, recovered_inc_count)
+
+tot <- c(sum(c1$confirmed_inc_count), sum(c1$death_inc_count), sum(c1$recovered_inc_count))
+
+df <- data.frame(matrix(unlist(tot), nrow=length(3), byrow=T))
+
+colnames(df) <- c("Total Confirmed Cases", "Total Cases of Death", "Total Recovered")
+
+my_knit <- knitr::kable(df)
+print(my_knit)
+```
+
+Dealing with multivariate data such as this, the following graph shows the top 15 infected countries again usin a stacked diagram. It is much easier to compare countries with respect to the three types of reported cases. For example, we can see China has had a better success in the number or recovered cases than any other country, whilst Italy and Spain has had more cases of deaths reported. Interestingly, countries such as Turkey and netherland have significant number of confirmed cases but very low deaths or recovered case.
+
+```{r stackBar, echo=FALSE, message=FALSE,  warning=FALSE, results='hide', COMMENT=FALSE}
+library(ggplot2)
+library(scales)
+
+covid_df <- read.csv('time_series_covid19_ALL_global.csv', header=TRUE)
+
+c1 = select(covid_df, Country, confirmed_inc_count, death_inc_count, recovered_inc_count)
+c1_agg <- aggregate(. ~ Country, FUN = sum, data = c1)
+c1_ord <- c1_agg[order(-c1_agg$confirmed_inc_count, -c1_agg$recovered_inc_count, decreasing = FALSE), ]
+top10 = head(c1_ord, n=15)
+
+head(top10, n=15)
+
+ll <- ""
+for (ix in 1:nrow(top10)) {
+  if (ix == nrow(top10)) {
+    print(ix)
+     cc <- paste("A", ",", top10$Country[ix], ",", "Confirmed", ",", top10$confirmed_inc_count[ix], '\n', sep="")
+     ll <- c(ll, cc)
+     cc <- paste("B", ",", top10$Country[ix], ",", "Recovered", ",", top10$recovered_inc_count[ix], '\n', sep="")
+     ll <- c(ll, cc)
+     cc <- paste("C", ",", top10$Country[ix], ",", "Death", ",", top10$death_inc_count[ix], sep="")
+     ll <- c(ll, cc)
+     }
+  else {
+    cc <- paste("A", ",", top10$Country[ix], ",", "Confirmed", ",", top10$confirmed_inc_count[ix], '\n', sep="")
+    ll <- c(ll, cc)
+    cc <- paste("B", ",", top10$Country[ix], ",", "Recovered", ",", top10$recovered_inc_count[ix], '\n', sep="")
+    ll <- c(ll, cc)
+    cc <- paste("C", ",", top10$Country[ix], ",", "Death", ",", top10$death_inc_count[ix], '\n', sep="")
+    ll <- c(ll, cc)
+  }
+}
+
+fc <- file("test.csv")
+writeLines(ll, fc, sep='')
+
+c2 <- read.csv('test.csv', header=FALSE)
+names(c2) <- c("Type", "Country", "Category", "Volume")
+
+c2 <- c2[order(c2$Country, c2$Type, decreasing = FALSE), ]
+
+c2$Country <- reorder(c2$Country,-c2$Volume)
+
+
+myplot <- ggplot(c2, aes(x = Country, y = Volume, fill = Type)) + 
+  geom_bar(stat = "identity") +
+  xlab("") +
+  ylab("Cases") +
+  scale_y_continuous(labels = comma, breaks=pretty_breaks(n=10)) +
+  scale_fill_manual(values = c("blue","green","red"),
+                    labels = c("A" = "Confirmed",
+                               "B" = "Recovered",
+                               "C" = "Death")
+                    )
+  theme_bw()
+
+
+myplot <- myplot + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+myplot
+
+```
+<h4>The global Trend of Infection</h4>
+<p>
+The next diagram shows how did we get to where we are. It shows the accumulaive number of confirmed cases across teh world. It shows that it was around end of January when it became obvious that the numbers were moving up exponentially. This is when WHO declared teh epidemy as pandemic.<p>
+
+```{r infectionRate, echo=FALSE, message=FALSE,  warning=FALSE, results='hide', COMMENT=FALSE}
+
+library(ggplot2)
+library(scales)
+
+covid_df <- read.csv('time_series_covid19_ALL_global.csv', header=TRUE)
+
+acc_df <- select(covid_df, confirmed_date, confirmed_acc_count)
+c1_agg <- aggregate(. ~ confirmed_date, FUN = sum, data = acc_df)
+
+
+c1_agg$confirmed_date <- as.Date(c1_agg$confirmed_date, format = "%d-%m-%Y")
+c1_agg <- c1_agg[order(c1_agg$confirmed_date), ]
+
+myplot <- ggplot(c1_agg, aes(x = confirmed_date, y = confirmed_acc_count)) + 
+  geom_bar(stat = "identity", color="white", fill="blue") +
+  xlab("") +
+  ylab("Confirmed Cases") +
+  scale_y_continuous(breaks=pretty_breaks(n=10)) +
+  scale_x_date(breaks="1 week", labels = date_format("%d-%B-%Y")) +
+  theme_bw()
+
+
+#c1_agg$confirmed_acc_count=as.numeric(levels(c1_agg$confirmed_acc_count))[c1_agg$confirmed_acc_count]
+myplot + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+```
+<h4>Zomming Into Specifc Regions</h4>
+<h5>The State of Infection in Australia</h5>
+<p>
+We now focus on Australia's situation. The following graph shows the cumulative number of confirmed cases since the beginning of the outbreak. It shows that the curve started to climb exponentially around mid march and flattened around early April.
+</p>
+
+```{r granular, echo=FALSE, message=FALSE,  warning=FALSE, results='hide', COMMENT=FALSE}
+covid_df <- read.csv('time_series_covid19_ALL_global.csv', header=TRUE)
+
+aus_df <- covid_df[covid_df$Country == 'Australia',]
+aus_df$confirmed_date <- as.Date(aus_df$confirmed_date, format = "%d-%m-%Y")
+aus_df <- aggregate(. ~ confirmed_date, FUN = sum, data = aus_df)
+aus_df <- select(aus_df, confirmed_date, confirmed_acc_count)
+
+myplot <- ggplot(aus_df, aes(x = confirmed_date, y = confirmed_acc_count)) + 
+  geom_area(fill="blue") +
+  xlab("") +
+  ylab("Confirmed Cases") +
+  scale_y_continuous(breaks=pretty_breaks(n=10)) +
+  scale_x_date(breaks="1 week", labels = date_format("%d-%B-%Y")) +
+  theme_bw()
+
+#c1_agg$confirmed_acc_count=as.numeric(levels(c1_agg$confirmed_acc_count))[c1_agg$confirmed_acc_count]
+myplot + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+```
+<h4>Zooming into Selective Countries</h4>
+<p>Using the next graph, we can zoom into each country and get an overview of the three categories for a selectected country. Unfortunately, the John Hopkins data does not capture state/region for any country other than Australia and United Kingdom.
+
+```{r, echo=FALSE}
+library(ggplot2)
+library(dplyr)
+
+covid_df <- read.csv('time_series_covid19_ALL_global.csv', header=TRUE)
+selectInput("CounryDropDown", "Please make a selection", choices = sort(unique(covid_df$Country)), selected = "Australia")
+
+
+renderPlot({
+  covid_df <- covid_df[covid_df$Country == input$CounryDropDown,]
+  
+  ll <- ""
+  for (ix in 1:nrow(covid_df)) {
+    if (ix == nrow(covid_df)) {
+      print(ix)
+      cc <- paste("A", ",", covid_df$State[ix], ",", "Confirmed", ",", covid_df$confirmed_inc_count[ix], '\n', sep="")
+      ll <- c(ll, cc)
+      cc <- paste("B", ",", covid_df$State[ix], ",", "Recovered", ",", covid_df$recovered_inc_count[ix], '\n', sep="")
+      ll <- c(ll, cc)
+      cc <- paste("C", ",", covid_df$State[ix], ",", "Death", ",", covid_df$death_inc_count[ix], sep="")
+      ll <- c(ll, cc)
+    }
+    else {
+      cc <- paste("A", ",", covid_df$State[ix], ",", "Confirmed", ",", covid_df$confirmed_inc_count[ix], '\n', sep="")
+      ll <- c(ll, cc)
+      cc <- paste("B", ",", covid_df$State[ix], ",", "Recovered", ",", covid_df$recovered_inc_count[ix], '\n', sep="")
+      ll <- c(ll, cc)
+      cc <- paste("C", ",", covid_df$State[ix], ",", "Death", ",", covid_df$death_inc_count[ix], '\n', sep="")
+      ll <- c(ll, cc)
+    }
+  }
+  
+  fc <- file('aus_conf.csv')
+  writeLines(ll, fc, sep='')
+  close(fc)
+  
+  
+  covid_df <- read.csv('aus_conf.csv', header=FALSE)
+  names(covid_df) = c('Type', 'State', 'Category', 'Count')
+  
+  c1_agg <- aggregate(. ~ State+Type+Category, FUN = sum, data = covid_df)
+  
+  c1_agg <- c1_agg[order(c1_agg$State, c1_agg$Type, decreasing = FALSE), ]
+
+  c1_agg$State <- reorder(c1_agg$State, -c1_agg$Count) 
+
+  myplot <- 
+    p <- ggplot(c1_agg, aes(x = State, y = Count, fill = Type)) + 
+      geom_bar(stat = "identity") +
+      xlab("") +
+      ylab("Cases") +
+      scale_y_continuous(breaks=pretty_breaks(n=10)) +
+      scale_fill_manual(values = c("blue","green","red"),
+                        labels = c("A" = "Confirmed", "B" = "Recovered", "C" = "Death")
+      )
+
+    p
+})
+  
+```
+<h4>Infection Trend per Country/State</h4>
+The next graph is much more flexible in showing different slices of the data. Filters for COuntry and State will help you focus on a partuclar state. The category selection allows you to choose between the three categories of figures.
+The Metric selection allows you to visualise the increments or cumulatives. The increments shows daily rates where as cumulative shows aggregated figures to teh day.
+
+```{r zoomin, echo=FALSE}
+library(ggplot2)
+library(scales)
+library(dplyr)
+
+covid_df <- read.csv('time_series_covid19_ALL_global.csv', header=TRUE)
+
+shinyApp(
+    ui = fluidPage(
+        selectInput("CounryDropDown", "Country", choices = sort(unique(covid_df$Country)), selected = "Australia"),
+        
+        uiOutput("secondSelection"),
+        uiOutput("thirdSelection"),
+        uiOutput("fourthSelection"),
+        
+        plotOutput(outputId = "distPlot")
+
+),
+
+
+    server <- function(input, output){
+      
+        covid_df <- read.csv('time_series_covid19_ALL_global.csv', header=TRUE)
+        
+        output$secondSelection <- renderUI({
+                      selectInput("Staten", "Region/State:", 
+                      choices = as.character(covid_df[covid_df$Country==input$CounryDropDown,"State"]), selected = "") 
+        })
+        
+        output$thirdSelection <- renderUI({
+                      selectInput("Cat", "Category:", choices = c("Confirmed", "Death", "Recovered"), selected = "Confirmed") 
+        })
+        
+        output$fourthSelection <- renderUI({
+                      selectInput("Met", "Metric:", choices = c("Incremental", "Cumulative"), selected = "Incremental") 
+        })
+        
+        
+        output$distPlot <- renderPlot({
+          
+            covid_df <- covid_df[covid_df$Country == input$CounryDropDown,]
+            covid_df <- covid_df[covid_df$State == input$Staten,]
+        
+            ll <- ""
+            for (ix in 1:nrow(covid_df)) {
+              if (ix == nrow(covid_df)) {
+                cc <- paste("A", ",", covid_df$State[ix], ",", "Confirmed", ",", covid_df$confirmed_inc_count[ix], ",",  
+                            covid_df$confirmed_acc_count[ix], ",", covid_df$confirmed_date[ix], '\n', sep="")
+                ll <- c(ll, cc)
+                cc <- paste("B", ",", covid_df$State[ix], ",", "Recovered", ",", covid_df$recovered_inc_count[ix], ",", 
+                            covid_df$recovered_acc_count[ix], ",", covid_df$confirmed_date[ix], '\n', sep="")
+                ll <- c(ll, cc)
+                cc <- paste("C", ",", covid_df$State[ix], ",", "Death", ",", covid_df$death_inc_count[ix], ",", 
+                            covid_df$death_acc_count[ix], ",", covid_df$confirmed_date[ix], sep="")
+                ll <- c(ll, cc)
+              }
+              else {
+                cc <- paste("A", ",", covid_df$State[ix], ",", "Confirmed", ",", covid_df$confirmed_inc_count[ix], ",", 
+                            covid_df$confirmed_acc_count[ix], ",", covid_df$confirmed_date[ix], '\n', sep="")
+                ll <- c(ll, cc)
+                cc <- paste("B", ",", covid_df$State[ix], ",", "Recovered", ",", covid_df$recovered_inc_count[ix], ",", 
+                            covid_df$recovered_acc_count[ix], ",", covid_df$confirmed_date[ix], '\n', sep="")
+                ll <- c(ll, cc)
+                cc <- paste("C", ",", covid_df$State[ix], ",", "Death", ",", covid_df$death_inc_count[ix], ",", 
+                            covid_df$death_acc_count[ix], ",", covid_df$confirmed_date[ix], '\n', sep="")
+                ll <- c(ll, cc)
+              }
+            }
+        
+            fc <- file('aus_confdd.csv')
+            writeLines(ll, fc, sep='')
+            close(fc)
+        
+            covid_df <- read.csv('aus_confdd.csv', header=FALSE)
+            names(covid_df) = c('Type', 'State', 'Category', 'Count',  'Cum', 'When')
+        
+        
+            covid_df %>%
+              mutate(When=as.Date(When, format = "%d/%m/%Y"))
+            
+            
+            if (input$Met == "Incremental")
+                {covid_df <- select(covid_df, Category, When, Count)}
+            else {
+                covid_df <- select(covid_df, Category, When, Cum)
+                names(covid_df) = c('Category', 'When', 'Count')
+            }
+                
+            
+            c1_agg <- aggregate(. ~ When+Category, FUN = sum, data = covid_df)
+            c1_agg$When <- as.Date(c1_agg$When, format = "%d-%m-%Y")
+            c1_agg <- c1_agg[order(c1_agg$When, decreasing = FALSE), ]
+            write.csv(c1_agg, "aggis.csv")
+        
+            if (input$Cat == "Confirmed") {Col = "blue"}
+            else if (input$Cat == "Death") {Col = "red"}
+            else {Col = "green"}
+            
+            myplot <- 
+              p <- ggplot(filter(c1_agg, Category == input$Cat), aes(x = When, y = Count)) +  
+                geom_bar(stat = "identity" , fill=Col) +
+                xlab("") +
+                ylab("Cases") +
+                scale_x_date(breaks="3 days", labels = date_format("%d-%B-%Y")) +
+                scale_y_continuous(breaks=pretty_breaks(n=10)) +
+                theme_bw() +
+                theme(axis.text.x = element_text(angle = 90, hjust = 1))
+              p
+        })
+    },
+  options = list(height = 700)
+)
+```
+<hr>
+<h5>Author: Dariush Riazati<br>
+Subject: Assignment 3 - Data Visualisation
+</h5>

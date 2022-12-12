@@ -1,0 +1,15 @@
+US,Confirmed,337071
+Spain,Confirmed,131646
+Italy,Confirmed,128948
+Germany,Confirmed,100123
+France,Confirmed,93773
+China,Confirmed,82054
+Iran,Confirmed,58226
+United Kingdom,Confirmed,48436
+Turkey,Confirmed,27069
+Switzerland,Confirmed,21100
+Belgium,Confirmed,19691
+Netherlands,Confirmed,17953
+Austria,Confirmed,12051
+Portugal,Confirmed,11278
+Brazil,Confirmed,11130

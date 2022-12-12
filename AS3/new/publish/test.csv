@@ -1,0 +1,45 @@
+A,US,Confirmed,580618
+B,US,Recovered,43482
+C,US,Death,23529
+A,Spain,Confirmed,170099
+B,Spain,Recovered,64727
+C,Spain,Death,17756
+A,Italy,Confirmed,159516
+B,Italy,Recovered,35436
+C,Italy,Death,20465
+A,France,Confirmed,137878
+B,France,Recovered,28001
+C,France,Death,14986
+A,Germany,Confirmed,130072
+B,Germany,Recovered,64300
+C,Germany,Death,3225
+A,United Kingdom,Confirmed,89571
+B,United Kingdom,Recovered,648
+C,United Kingdom,Death,11347
+A,China,Confirmed,82666
+B,China,Recovered,78032
+C,China,Death,3328
+A,Iran,Confirmed,73303
+B,Iran,Recovered,45983
+C,Iran,Death,4585
+A,Turkey,Confirmed,61049
+B,Turkey,Recovered,3957
+C,Turkey,Death,1296
+A,Belgium,Confirmed,30589
+B,Belgium,Recovered,6737
+C,Belgium,Death,3903
+A,Netherlands,Confirmed,26710
+B,Netherlands,Recovered,300
+C,Netherlands,Death,2833
+A,Canada,Confirmed,25689
+B,Canada,Recovered,8026
+C,Canada,Death,783
+A,Switzerland,Confirmed,25688
+B,Switzerland,Recovered,13700
+C,Switzerland,Death,1138
+A,Brazil,Confirmed,23430
+B,Brazil,Recovered,173
+C,Brazil,Death,1328
+A,Russia,Confirmed,18328
+B,Russia,Recovered,1470
+C,Russia,Death,148

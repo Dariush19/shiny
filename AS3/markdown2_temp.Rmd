@@ -1,0 +1,134 @@
+---
+title: ""
+author: ""
+date: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<h3><center>COVID-19<br>Understanding the spread and extent</center></h3>
+<p>&nbsp;</p>
+<h4>Overview</h4>
+<p>The COVID19 is the biggest challenge to human existence in the past 100 years. In this project, we use the data made <a href="https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases">publicly</a> available to analyze the geographic spread and its impact. 
+We analyse the data in terms of:
+<ul>
+<li>Confirmed cases</li>
+<li>Fatal cases</li>
+<li>Recovered cases</li>
+</ul>
+The data set we use in this page is obtained from the three data sets above but also put through a series of transformations (data wrangling) for cleansing and ease of visualisation. Refer to <a href="covid_wrangle_dariush.py">this python program</a> for how this process is done.
+</p>
+
+<h4>A Global View</h4>
+We start with a high level view of the spred and extent of the virus across the world. We can quickly see that the spread is global with China in East Asia, Iran in middle east followed by a bigger impact on Eurpoe and a much greater impact on the US.  
+```{r worldView, echo=FALSE, message=FALSE,  warning=FALSE, results='hide', COMMENT=FALSE}
+library(rworldmap)
+
+covid_df <- read.csv('E:/Personal_Files/Dariush/monash/visual/AS3/new/time_series_covid19_ALL_global.csv', header=TRUE)
+
+#covid_ag <- aggregate(confirmed_inc_count ~ Country+Long+Lat, FUN = sum, data = covid_df)
+covid_ag <- aggregate(confirmed_inc_count ~ Country, FUN = sum, data = covid_df)
+
+N = 100
+library(RColorBrewer)
+
+myMap <- joinCountryData2Map( covid_ag, 
+                              nameJoinColumn="Country", 
+                              joinCode="NAME" )
+
+#colourPalette <- RColorBrewer::brewer.pal(10,'Spectral')
+colourPalette <- brewer.pal(N,"OrRd")
+
+#plot the map
+mapCountryData( myMap,
+                nameColumnToPlot='confirmed_inc_count',
+                catMethod='fixedWidth',
+                colourPalette=colourPalette, 
+                numCats=100,
+                mapTitle = "")
+```
+<p>The following table provides a tabuar quantitative view of the above limited to the top 15 countries ordered on confirmed cases.</p>
+
+```{r global_numbers, echo=FALSE, message=FALSE, warning=FALSE, comment=NA}
+library(dplyr)
+library(knitr)
+
+covid_df <- read.csv('E:/Personal_Files/Dariush/monash/visual/AS3/new/time_series_covid19_ALL_global.csv', header=TRUE)
+c1 = select(covid_df, Country, confirmed_inc_count, death_inc_count, recovered_inc_count)
+c1_agg <- aggregate(. ~ Country, FUN = sum, data = c1)
+c1_ord <- c1_agg[order(-c1_agg$confirmed_inc_count),]
+top10 = head(c1_ord, n=15)
+
+row.names(top10) = NULL
+#print(top10)
+
+my_knit <- knitr::kable(top10, col.names = c("Country", "Confirmed Cases", "Death", "Recovered"))
+print(my_knit)
+```
+
+The following
+
+```{r stackBar, echo=FALSE, message=FALSE,  warning=FALSE, results='hide', COMMENT=FALSE}
+library(ggplot2)
+library(scales)
+
+covid_df <- read.csv('E:/Personal_Files/Dariush/monash/visual/AS3/new/time_series_covid19_ALL_global.csv', header=TRUE)
+
+c1 = select(covid_df, Country, confirmed_inc_count, death_inc_count, recovered_inc_count)
+c1_agg <- aggregate(. ~ Country, FUN = sum, data = c1)
+c1_ord <- c1_agg[order(-c1_agg$confirmed_inc_count, -c1_agg$recovered_inc_count, decreasing = FALSE), ]
+top10 = head(c1_ord, n=15)
+
+head(top10, n=15)
+
+ll <- ""
+for (ix in 1:nrow(top10)) {
+  if (ix == nrow(top10)) {
+    print(ix)
+     cc <- paste("A", ",", top10$Country[ix], ",", "Confirmed", ",", top10$confirmed_inc_count[ix], '\n', sep="")
+     ll <- c(ll, cc)
+     cc <- paste("B", ",", top10$Country[ix], ",", "Recovered", ",", top10$recovered_inc_count[ix], '\n', sep="")
+     ll <- c(ll, cc)
+     cc <- paste("C", ",", top10$Country[ix], ",", "Death", ",", top10$death_inc_count[ix], sep="")
+     ll <- c(ll, cc)
+     }
+  else {
+    cc <- paste("A", ",", top10$Country[ix], ",", "Confirmed", ",", top10$confirmed_inc_count[ix], '\n', sep="")
+    ll <- c(ll, cc)
+    cc <- paste("B", ",", top10$Country[ix], ",", "Recovered", ",", top10$recovered_inc_count[ix], '\n', sep="")
+    ll <- c(ll, cc)
+    cc <- paste("C", ",", top10$Country[ix], ",", "Death", ",", top10$death_inc_count[ix], '\n', sep="")
+    ll <- c(ll, cc)
+  }
+}
+
+fc <- file("test.csv")
+writeLines(ll, fc, sep='')
+
+c2 <- read.csv('E:/Personal_Files/Dariush/monash/visual/AS3/test.csv', header=FALSE)
+names(c2) <- c("Type", "Country", "Category", "Volume")
+
+c2 <- c2[order(c2$Country, c2$Type, decreasing = FALSE), ]
+
+c2$Country <- reorder(c2$Country,-c2$Volume)
+c2
+myplot <- ggplot(c2, aes(x = Country, y = Volume, fill = Type)) + 
+  geom_bar(stat = "identity") +
+  xlab("Country") +
+  ylab("Volume") +
+  scale_fill_manual(values = c("blue","green","red"),
+                    labels = c("A" = "Confirmed",
+                               "B" = "Recovered",
+                               "C" = "Death")
+                    )
+  theme_bw()
+
+
+c2$Volume=as.numeric(levels(c2$Volume))[c2$Volume]
+myplot <- myplot + scale_y_continuous(labels = comma)
+myplot + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+```

@@ -1,0 +1,14 @@
+---
+title: "Untitled"
+author: "Dariush Riazati"
+date: "12 April 2020"
+output: html_document
+---
+```{r me, echo=FALSE}
+library(ggplot2)
+library(scales)
+library(dplyr)
+library(shiny)
+covid_df <- read.csv('E:/Personal_Files/Dariush/monash/visual/AS3/new/time_series_covid19_ALL_global.csv', header=TRUE)
+selectInput("CounryDropDown", "Please make a selection", choices = sort(unique(covid_df$Country)), selected = "Australia")
+```

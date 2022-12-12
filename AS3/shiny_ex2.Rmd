@@ -1,0 +1,76 @@
+---
+title: ""
+output: html_document
+runtime: shiny
+---
+
+```{r setup, echo=FALSE}
+library(ggplot2)
+              covid_df <- read.csv('E:/Personal_Files/Dariush/monash/visual/AS3/new/time_series_covid19_ALL_global.csv', header=TRUE)
+
+shinyApp(
+    ui = fluidPage(
+        selectInput("CounryDropDown", "Please make a selection", choices = sort(unique(covid_df$Country)), selected = "Australia"),
+              plotOutput(outputId = "distPlot")
+
+),
+
+
+server <- function(input, output){
+  output$distPlot <- renderPlot({
+
+    
+      covid_df <- covid_df[covid_df$Country == input$CounryDropDown,]
+  
+  ll <- ""
+  for (ix in 1:nrow(covid_df)) {
+    if (ix == nrow(covid_df)) {
+      print(ix)
+      cc <- paste("A", ",", covid_df$State[ix], ",", "Confirmed", ",", covid_df$confirmed_inc_count[ix], '\n', sep="")
+      ll <- c(ll, cc)
+      cc <- paste("B", ",", covid_df$State[ix], ",", "Recovered", ",", covid_df$recovered_inc_count[ix], '\n', sep="")
+      ll <- c(ll, cc)
+      cc <- paste("C", ",", covid_df$State[ix], ",", "Death", ",", covid_df$death_inc_count[ix], sep="")
+      ll <- c(ll, cc)
+    }
+    else {
+      cc <- paste("A", ",", covid_df$State[ix], ",", "Confirmed", ",", covid_df$confirmed_inc_count[ix], '\n', sep="")
+      ll <- c(ll, cc)
+      cc <- paste("B", ",", covid_df$State[ix], ",", "Recovered", ",", covid_df$recovered_inc_count[ix], '\n', sep="")
+      ll <- c(ll, cc)
+      cc <- paste("C", ",", covid_df$State[ix], ",", "Death", ",", covid_df$death_inc_count[ix], '\n', sep="")
+      ll <- c(ll, cc)
+    }
+  }
+  
+  fc <- file('E:/Personal_Files/Dariush/monash/visual/AS3/aus_conf.csv')
+  writeLines(ll, fc, sep='')
+  close(fc)
+  
+  
+  covid_df <- read.csv('E:/Personal_Files/Dariush/monash/visual/AS3/aus_conf.csv', header=FALSE)
+  names(covid_df) = c('Type', 'State', 'Category', 'Count')
+  
+  c1_agg <- aggregate(. ~ State+Type+Category, FUN = sum, data = covid_df)
+  
+  c1_agg <- c1_agg[order(c1_agg$State, c1_agg$Type, decreasing = FALSE), ]
+
+  c1_agg$State <- reorder(c1_agg$State, -c1_agg$Count) 
+
+  myplot <- 
+    p <- ggplot(c1_agg, aes(x = State, y = Count, fill = Category)) + 
+      geom_bar(stat = "identity") +
+      xlab("") +
+      ylab("Cases") +
+      scale_fill_manual(values = c("blue","red","green"),
+                        labels = c("A" = "Confirmed", "B" = "Recovered", "C" = "Death")
+      )
+
+    p
+    
+
+    })
+},
+  options = list(height = 500)
+)
+```

@@ -1,0 +1,34 @@
+﻿Your reference number is: 20922240
+
+Sheet 1
+Ideas, filtered, refines
+Idea 1 being having a page that is specifically designed to enrol GS students. 
+It will have these components:
+--Background Theme
+--Monash Logo
+--University Events
+--High level Couse information and a link
+--Career options
+--Enrolment
+--Contact links
+
+Idea 2
+Similar to above but less details. It will have the following compponents:
+--Background Theme
+--Monash Logo
+--University Events
+--High level Couse information with a sales pitch and a link
+--Contact links
+
+Couse information with the following compponents:
+- GDDS Theme
+- GDDS Logo
+- Calendar
+- Perquisites
+- Career options
+- Enrolment
+- Teaching staff
+- Units
+
+
+Sheet 2, 3,4

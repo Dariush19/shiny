@@ -1,0 +1,28 @@
+---
+title: ""
+author: "Dariush Riazati"
+date: "16 April 2020"
+output: html_document
+runtime: shiny
+---
+
+```{r global_aggregates, echo=FALSE, message=FALSE, warning=FALSE, comment=NA}
+library(dplyr)
+library(knitr)
+
+covid_df <- read.csv('E:/Personal_Files/Dariush/monash/visual/AS3/new/time_series_covid19_ALL_global.csv', header=TRUE)
+
+covid_df$recovered_inc_count[is.na(covid_df$recovered_inc_count)] <- 0
+covid_df$recovered_acc_count[is.na(covid_df$recovered_acc_count)] <- 0
+
+c1 = select(covid_df, confirmed_inc_count, death_inc_count, recovered_inc_count)
+
+tot <- c(sum(c1$confirmed_inc_count), sum(c1$death_inc_count), sum(c1$recovered_inc_count))
+
+df <- data.frame(matrix(unlist(tot), nrow=length(3), byrow=T))
+
+colnames(df) <- c("Total Confirmed Cases", "Total Cases of Death", "Total Recovered")
+
+my_knit <- knitr::kable(df)
+print(my_knit)
+```

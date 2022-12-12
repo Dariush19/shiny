@@ -1,0 +1,71 @@
+﻿My name is Dariush 
+This is a short presenttaion of the work I have done around visualising the COVID-19 data.
+ 
+the data wrangling part  takes 3 input files related to the confirmed cases, death and recovered cases.
+It transforms them and craetes a single CSV.
+
+
+Then comes the actual visualisation process using R which uses the input file and generates html output which I publish to a 
+shiny server with general public as audience in mind.  and takes around 10 seconds to load.
+
+
+It can be accessed from this link
+I have selected a newspaper layout article to tell a story. I can augment the graphs and tables with description rather
+ than just a title which I then have to manage its positioning and gap. 
+ 
+It starts with some background. It then and provides a global view of the 
+outbreak on a world map with a color palet to help quantify the number of confirmed cases across the world.
+we can see the outbreak is everywhere except in greenland and some south american countries.
+However the extent is much greater as we move from Chine to middle east and then to Eurpe and US. 
+
+
+ cases than any other country, 
+whilst Spain and Ita
+teh next table table provides quantitative measures of each category for the top 15 infected nations, 
+we can see that China has had a better success in the number or recoveredly has had more cases of deaths reported. 
+Interestingly, countries such as UK and Netherland have significant number of confirmed cases 
+but very low recovered case
+Iran is also interesting that perhaps lacks an advanced health care has very high rate of recovered cases.
+
+
+The bar chart says teh same thing I went through but is much more visual and makes it easier to compare.
+US, China, and Iran and UK
+
+
+
+The next diagram shows how did we get to where we are. It shows the cumulaive number of confirmed cases across th world. 
+It shows that it was around Mid March  when it became obvious that the numbers were moving up exponentially. 
+This is when WHO declared the epidemy as pandemic.
+
+
+
+We now focus on Australia’s situation.  This graph shows the cumulative number of confirmed 
+cases since the beginning of the outbreak. 
+It shows that the curve started to climb exponentially around mid-March and flattened around early April.
+
+
+
+
+Using
+next graph, we can zoom into each country and get an overview of the three categories for a selected country. 
+NSW ranking highest followed by ...
+Simiaar to death and recovery
+Although the number of recovered in NSW does not seem to be reported or captured.
+Look at Chine and emirates
+
+
+
+
+
+The next graph is much more flexible in showing different slices of the data. 
+It shows teh trend for each state if the data supports it
+E.g ACT peeked late march and dropped back in early April
+Similar situatio for victoria
+
+Also show cumulative.
+
+US and UK show similar patter in terms of the start and the rate of preogression for confirmed cases
+Show US and Germany.
+pointing to travel between US and eurpoew
+
+Thank you for listening

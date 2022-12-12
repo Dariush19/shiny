@@ -1,0 +1,363 @@
+﻿From Michael Niemann to Everyone:  06:58 PM
+starting in a couple of minutes
+From Matthew Beilby to Everyone:  06:58 PM
+good afternoon everyone!
+From Jian Liang to Everyone:  06:59 PM
+Hi Michael!
+hi Every one
+From Matthew Beilby to Everyone:  06:59 PM
+New Jacket Michael?
+haha fair enough!
+From Irina Lumsden to Everyone:  06:59 PM
+Hi everyone
+From Dariush Riazati to Everyone:  06:59 PM
+Caulfield or Clayton?
+From Matthew Beilby to Everyone:  07:00 PM
+Exciting! though biit of a bummer about the heating!
+From Dariush Riazati to Everyone:  07:00 PM
+Good old CIT
+From Matthew Beilby to Everyone:  07:00 PM
+good luck!
+From Darragh Ruddy to Everyone:  07:02 PM
+Hi all
+From Marcus Hudson to Everyone:  07:02 PM
+Hi everyone
+From Jian Liang to Everyone:  07:06 PM
+yes
+From Jafreen Hossain to Everyone:  07:06 PM
+yes
+From Matthew Beilby to Everyone:  07:07 PM
+Hi Shirin
+Thanks Shirin
+From Irina Lumsden to Everyone:  07:10 PM
+great!
+wrangling in R? Or/and visualising?
+From Shirin Ghaffarian Maghool to Everyone:  07:11 PM
+You can do wrangling in any software
+Visualisation should be in R/D3
+From Matthew Beilby to Everyone:  07:12 PM
+Will much wrangling be required?
+ok thanks
+From Shirin Ghaffarian Maghool to Everyone:  07:12 PM
+You need to do wrangling but the main focus is on visualisation
+From Callum Lynch to Everyone:  07:16 PM
+Michael/Shirin, when you talk about "interactive" visualisations, are you referring to the ability for the end user/audience to interact with the visualisation?
+From Shirin Ghaffarian Maghool to Everyone:  07:16 PM
+yes
+From Callum Lynch to Everyone:  07:17 PM
+Thank you
+From Shirin Ghaffarian Maghool to Everyone:  07:18 PM
+Exactly
+You will get a better idea of what is an Interactive visualisation during this TP
+From Peter McEniery to Everyone:  07:21 PM
+Michael n - I wonder if your headphone cord could be arranged under your microphone hanging straight down. I'm getting a bit of noise on my end and I think that the cord movement is the cause
+loud and clear, thanks
+From Matthew Beilby to Everyone:  07:24 PM
+yes looks wrong here
+From Peter McEniery to Everyone:  07:24 PM
+looks clear to me
+oh wait no
+From Darragh Ruddy to Everyone:  07:25 PM
+ try wrangling that!
+From Irina Lumsden to Everyone:  07:26 PM
+having a great easter
+From Shalaka Sakhardande to Everyone:  07:30 PM
+Can we use python for assignment 1 and/or assignment 3?
+From Shirin Ghaffarian Maghool to Everyone:  07:30 PM
+no
+From Callum Lynch to Everyone:  07:30 PM
+So not allowed to use pandas to wrangle the data, for example?
+From Irina Lumsden to Everyone:  07:31 PM
+you mentioned something about group assignment?
+From Shirin Ghaffarian Maghool to Everyone:  07:31 PM
+For Assignment 1 (Exploration and Wrangling part) it is fine to use python
+But for Visualisation part you have to use R/D3
+From Shalaka Sakhardande to Everyone:  07:31 PM
+Thank you
+From Shirin Ghaffarian Maghool to Everyone:  07:31 PM
+As2 is group Assignment
+From Jian Liang to Everyone:  07:35 PM
+isn’t Assignment 1 is linked to assignment 2? some if everyone in a group use different dataset , when goes to assignment 2, only one is remind for next stage?
+*so
+From Callum Lynch to Everyone:  07:36 PM
+Jiang, I believe Assignment 2 is separate from Assignments 1 & 3
+From Jian Liang to Everyone:  07:36 PM
+oh! Thank you Callum
+From Shirin Ghaffarian Maghool to Everyone:  07:36 PM
+As1 is the first part of As3
+From Irina Lumsden to Everyone:  07:36 PM
+I wonder how is it submitted/assessed
+From Matthew Beilby to Everyone:  07:37 PM
+I vote we all self mark it ;)
+From Shirin Ghaffarian Maghool to Everyone:  07:37 PM
+As2 is completely different
+From Matthew Beilby to Everyone:  07:37 PM
+Looking clear on pdf!
+From Shirin Ghaffarian Maghool to Everyone:  07:37 PM
+@Matthew: which one? As1/2/3
+From Matthew Beilby to Everyone:  07:37 PM
+A2, and jokingly of course :P
+From Shirin Ghaffarian Maghool to Everyone:  07:38 PM
+:)
+From Matthew Beilby to Everyone:  07:38 PM
+Hi Jackie
+From Darragh Ruddy to Everyone:  07:38 PM
+     hi Jackie :)
+From Jian Liang to Everyone:  07:38 PM
+Hi Jackie
+From Jafreen Hossain to Everyone:  07:38 PM
+Hi Jackie
+From Myrnelle Jover to Everyone:  07:38 PM
+Sorry guys, I've got to head off in a few minutes. Michael/Shirin, when will this video link be uploaded to Moodle so I can follow the rest of the meeting?
+From Peter McEniery to Everyone:  07:39 PM
+Jackie Right 
+From Irina Lumsden to Everyone:  07:39 PM
+Ha!
+From Shirin Ghaffarian Maghool to Everyone:  07:39 PM
+That is fine. We will upload it by tonight
+From Irina Lumsden to Everyone:  07:39 PM
+we can shoot an e-mail?
+From Myrnelle Jover to Everyone:  07:40 PM
+Thank you!
+From Jafreen Hossain to Everyone:  07:40 PM
+Thank you :) 
+From Peter McEniery to Everyone:  07:40 PM
+hahaha
+Jackie has more books on her shelf
+From Jian Liang to Everyone:  07:40 PM
+Thank you Jackie.
+From Matthew Beilby to Everyone:  07:41 PM
+Thanks Jackie
+From Jian Liang to Everyone:  07:41 PM
+Hi Jackie are you work 7/24?
+From Matthew Beilby to Everyone:  07:42 PM
+jackie.rong@monash.edu <jackie.rong@monash.edu>;
+From Jian Liang to Everyone:  07:42 PM
+WOW,COOL, thank you!
+From Irina Lumsden to Everyone:  07:46 PM
+multiple choice?
+any example questions?
+From Shirin Ghaffarian Maghool to Everyone:  07:46 PM
+MCQ and short answer
+From Irina Lumsden to Everyone:  07:46 PM
+no coding?
+From Shirin Ghaffarian Maghool to Everyone:  07:47 PM
+No coding
+From Darragh Ruddy to Everyone:  07:47 PM
+Give me a bar chart any day
+From Matthew Beilby to Everyone:  07:48 PM
+strong dislike for making pie chart 3d...
+From Gavin Bonello to Everyone:  07:48 PM
+no use of time
+From Callum Lynch to Everyone:  07:48 PM
+Hard to judge proportions
+From Peter McEniery to Everyone:  07:48 PM
+no units or measurement
+From Marcus Hudson to Everyone:  07:48 PM
+no measure
+From Lin Mo to Everyone:  07:48 PM
+difficult to compare proportions
+From Gavin Bonello to Everyone:  07:48 PM
+the versions show progression of time
+From Jafreen Hossain to Everyone:  07:48 PM
+no data label
+From Brodie Nicholson to Everyone:  07:48 PM
+too many slices of pie
+From Gavin Bonello to Everyone:  07:48 PM
+piechart doesn't account for it
+From Angus McCall to Everyone:  07:48 PM
+hate pies
+From Lachlan Gosper to Everyone:  07:48 PM
+No actual proportions detailed
+From Ramya Chandrasekaran to Everyone:  07:48 PM
+too many features
+From Lin Mo to Everyone:  07:48 PM
+some slices too small
+From Irina Lumsden to Everyone:  07:48 PM
+hard to judge the area from a pie chart
+From Shirin Ghaffarian Maghool to Everyone:  07:48 PM
+You can turn on your microphone
+From Peter McEniery to Everyone:  07:48 PM
+hard to know which product came first
+From Darragh Ruddy to Everyone:  07:48 PM
+Colours too close for blues
+From Ramya Chandrasekaran to Everyone:  07:48 PM
+3d
+From Conrad Leonard to Everyone:  07:48 PM
+no time dimension
+
+From Jian Liang to Everyone:  07:48 PM
+too many color could be hard to tell
+From YANG LI to Everyone:  07:49 PM
+no values
+From Darragh Ruddy to Everyone:  07:49 PM
+colourblindness issues
+From Peter McEniery to Everyone:  07:49 PM
+the tilted arrangement makes it hard to estimate magnitude of slices
+From Minjoo Park to Everyone:  07:49 PM
+no label 
+From Irina Lumsden to Everyone:  07:49 PM
+the same goes for a bar chart
+From Anna Agati to Everyone:  07:49 PM
+no values or %
+From Jafreen Hossain to Everyone:  07:49 PM
+two blue colors - similar 
+From Mohammad-Jawwad Ilyas to Everyone:  07:49 PM
+Hard to estimate
+From Irina Lumsden to Everyone:  07:50 PM
+perspective!!
+From Darragh Ruddy to Everyone:  07:53 PM
+Would be better if the legends were inline with the charts for the colour issues
+From Callum Lynch to Everyone:  07:53 PM
+Agree with Darragh, the colours are redundant here
+From Peter McEniery to Everyone:  07:54 PM
+x axis
+From Matthew Beilby to Everyone:  07:54 PM
+horizontal axis label
+From Peter McEniery to Everyone:  07:54 PM
+no units  for y axis either - what is measured
+From Darragh Ruddy to Everyone:  07:54 PM
+labels matching the bars
+From Marcus Hudson to Everyone:  07:54 PM
+would be better of the version names were on the blocks
+From Callum Lynch to Everyone:  07:54 PM
+The horizontal axis should be adjusted to account for when the versions were released, so it represents time accurately
+From Jian Liang to Everyone:  07:54 PM
+Actual value still missing for some of bar
+From Matthew Beilby to Everyone:  07:54 PM
+I mean I would like to know more, size of features, duration of version, frequency of updates
+From Lin Mo to Everyone:  07:56 PM
+r\dataisbeautiful
+From Matthew Beilby to Everyone:  07:56 PM
+its a great subreddit Lin :D
+
+From Callum Lynch to Everyone:  07:56 PM
++1 for dataisbeautiful
+From Peter McEniery to Everyone:  07:58 PM
+John Hopkins Uni coronavirus dashboard is topical 
+From Darragh Ruddy to Everyone:  07:58 PM
+Oh boy, I remember some shockers from physics presentations
+From Peter McEniery to Everyone:  07:58 PM
+https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6
+From Marcus Hudson to Everyone:  07:59 PM
+wow thanks Peter
+From Conrad Leonard to Everyone:  07:59 PM
+really dislike: every violin plot ever
+From Shirin Ghaffarian Maghool to Everyone:  08:00 PM
+That is really good exercise because you will get some idea on what you have to do in your final project and what you must avoid
+From Matthew Beilby to Everyone:  08:01 PM
+Visualization assists comprehension and to tell a story more effectively to stakeholders
+From Peter McEniery to Everyone:  08:01 PM
+human eye 
+From Jian Liang to Everyone:  08:01 PM
+human could make sense of information through picture
+From Callum Lynch to Everyone:  08:01 PM
+Speed of information - the eye can identify patterns more quickly in a lot of cases
+From Tod Nestor to Everyone:  08:01 PM
+seems easier to understand
+From Jafreen Hossain to Everyone:  08:01 PM
+we can see the unseen :) 
+From Darragh Ruddy to Everyone:  08:01 PM
+We're visual creatures, it's more intuitive to view the entire data set visually than look at hundreds of rows of tabular data
+From Jian Liang to Everyone:  08:02 PM
+90% of information were learn from image
+From Zichao Zhang to Everyone:  08:02 PM
+Presentation for decision making
+From Conrad Leonard to Everyone:  08:02 PM
+I think for presentation it's essential
+From Irina Lumsden to Everyone:  08:02 PM
+the picture is worths 1000 words?
+From Marcus Hudson to Everyone:  08:02 PM
+It's difficult to see a trend in a table of numbers
+From Angus McCall to Everyone:  08:02 PM
+Difficult to convey ideas with just numbers, especially if they're large eg millions vs billions. 
+From Dariush Riazati to Everyone:  08:02 PM
+More effective is showing relations and association where individual precise measures are not that important.
+From Shirin Ghaffarian Maghool to Everyone:  08:02 PM
+Good answers. Perfect. It seems we have a lots of expert. :)
+From May Wong to Everyone:  08:02 PM
+easier to capture targeted audience
+From Irina Lumsden to Everyone:  08:03 PM
+complementing
+From Darragh Ruddy to Everyone:  08:03 PM
+Showing information to non-technical shareholders
+From Callum Lynch to Everyone:  08:03 PM
+These days we're trained visually too by devices and such, so visual stuff holds our attention
+From Conrad Leonard to Everyone:  08:04 PM
+some vis can be interactive too in a way that numbers & tables aren't.
+From Callum Lynch to Everyone:  08:18 PM
+Is there a branch of science which is concerned with optimising visualisation of information?
+From Shirin Ghaffarian Maghool to Everyone:  08:20 PM
+@Callum: It is a very good question. I am not sure but based on my knowledge I do not think there is.
+From Lin Mo to Everyone:  08:20 PM
+?Data Science
+From Irina Lumsden to Everyone:  08:22 PM
+yeah
+From Callum Lynch to Everyone:  08:27 PM
+Are there core principles of visual design that inherently make one visualisation approach better than another? Does this unit go into that?
+From Matthew Beilby to Everyone:  08:27 PM
+Hans Rosling also wrote an excellent book called factfulness that is an enjoyable read
+From Conrad Leonard to Everyone:  08:28 PM
+Ed Tufte's books are great. The field of https://en.wikipedia.org/wiki/Information_design
+From Callum Lynch to Everyone:  08:28 PM
+Thanks Conrad, I'll check it out
+From Shirin Ghaffarian Maghool to Everyone:  08:28 PM
+In this unit we are only focused on FDS methodology. and we are going to use this approach as a one of the top and recommended approach.
+From Conrad Leonard to Everyone:  08:29 PM
+Also The Grammar of Graphics by Wilkinson (the gg in ggplot)
+From Peter McEniery to Everyone:  08:30 PM
+why is the acronym for Five Sheet Design not FSD? Is the preferred term Five Design Sheets???
+From Irina Lumsden to Everyone:  08:30 PM
+you guys, know so much!
+From Shirin Ghaffarian Maghool to Everyone:  08:31 PM
+Thanks for the recommended books
+It is Five Design Sheet methodology
+FDS
+From Peter McEniery to Everyone:  08:32 PM
+ok Five Design Sheet and NOT Five Sheet Design
+From Conrad Leonard to Everyone:  08:32 PM
+bummer the free desktop version of Tableau doesn't work on Linux though
+From Shirin Ghaffarian Maghool to Everyone:  08:33 PM
+@Peter: Yes
+From Matthew Beilby to Everyone:  08:33 PM
+Power BI is another similar program function Conrad, windows / office based, unsure if it works in linux
+similar to Tableau that is
+From Conrad Leonard to Everyone:  08:33 PM
+Thanks @Matt I'll check it out
+From Jafreen Hossain to Everyone:  08:34 PM
+SAS is good as well :) 
+From Jian Liang to Everyone:  08:34 PM
+PowerBI has web access, works on any platform
+From Callum Lynch to Everyone:  08:35 PM
+PowerBI is particularly good for Azure cloud integration
+From Dariush Riazati to Everyone:  08:35 PM
+Latest version of Cognos is catching up.
+From Peter McEniery to Everyone:  08:39 PM
+can we canvas for like-minded project partners in the General Discussion Forum?
+From Shirin Ghaffarian Maghool to Everyone:  08:39 PM
+yes
+From Matthew Beilby to Everyone:  08:49 PM
+yes it would have been great!
+From Darragh Ruddy to Everyone:  08:50 PM
+I have a commitment at the end of the meetup, is it a problem if I have to go?
+From Shirin Ghaffarian Maghool to Everyone:  08:51 PM
+No worries
+You can go
+From May Wong to Everyone:  08:51 PM
+will this be accessible after the meet-up?
+I am in the same situation, have to go pick up my daughter
+From Frances to Everyone:  08:51 PM
+I'll have to leave the meeting at 9pm as well. Hopefully we can access it
+From May Wong to Everyone:  08:52 PM
+Thank you, Michael
+From Dariush Riazati to Everyone:  08:52 PM
+I would also need to leave after 9:00 Sorry!
+From Gavin Bonello to Everyone:  08:52 PM
+Sorry guys don't have my mic connected tonight
+From Gavin Bonello to Everyone:  09:01 PM
+Cheers Darragh
+yeah I need to jump off too
+haha not on tonight sorry
+nex ttime
+I like the sound of that. Can do it through googlechat too 
+see you

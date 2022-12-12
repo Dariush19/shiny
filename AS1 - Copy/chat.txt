@@ -1,0 +1,284 @@
+﻿
+From Marcus Hudson to Everyone:  07:00 PM
+hi michael
+From Irina Lumsden to Everyone:  07:01 PM
+hi everyone!
+From Jian Liang to Everyone:  07:01 PM
+Hi Michael!
+From Me to Everyone:  07:01 PM
+Hi all
+From Jian Liang to Everyone:  07:01 PM
+Hi Everyone
+From May Wong to Everyone:  07:01 PM
+hello
+From Shirin Ghaffarian Maghool to Everyone:  07:01 PM
+Hi Everyone
+From May Wong to Everyone:  07:01 PM
+yes
+From hossein farajollahi to Everyone:  07:01 PM
+Hi all
+From Jafreen Hossain to Everyone:  07:01 PM
+yes
+From Matthew Beilby to Everyone:  07:01 PM
+Hello all :)
+From Peter McEniery to Everyone:  07:09 PM
+had audio problems - machine reboot solved it
+From Conrad Leonard to Everyone:  07:17 PM
+what does "Focus/Parti" mean?
+From Jian Liang to Everyone:  07:18 PM
+Do we need to consider any security relate design or practise for presentation as web application?
+From Conrad Leonard to Everyone:  07:18 PM
+thanks
+From Shirin Ghaffarian Maghool to Everyone:  07:18 PM
+@Conrad:The specificities feature in your visualisation.
+From Jian Liang to Everyone:  07:18 PM
+Thank you!
+From Shirin Ghaffarian Maghool to Everyone:  07:18 PM
+@jian: No there is no need
+From Jian Liang to Everyone:  07:20 PM
+This is sounds like a waterfall software engeneering. if we realised some herdles in step 5 do we have redo again?
+From Callum Lynch to Everyone:  07:21 PM
+Interesting point Jian, I had wondered whether this could be done (better?) using something like Agile
+From Jian Liang to Everyone:  07:21 PM
+@Callum, you are thinking what I’m thinking :)
+From Me to Everyone:  07:22 PM
+Agree. This is best achieved Agile.
+From Irina Lumsden to Everyone:  07:47 PM
+it’s look like bar chart in polar coordinates
+From Myrnelle Jover to Everyone:  07:50 PM
+This is one of my favourite visualisations on climate change.
+From Shirin Ghaffarian Maghool to Everyone:  07:51 PM
+That is interesting
+From Brendon Carton to Everyone:  07:52 PM
+Ed Hawkins is the brain behind these.
+From Lin Mo to Everyone:  07:53 PM
+mauna loa is in hawaii
+From Brendon Carton to Everyone:  07:53 PM
+Observations are from Hawaii.
+From Jian Liang to Everyone:  07:54 PM
+line might be better?
+with color
+From Conrad Leonard to Everyone:  07:54 PM
+Depends on the audience. I'd like to see this one in a paper
+I'd like to see the other one in a newspaper maybe
+From Irina Lumsden to Everyone:  07:55 PM
+depends on the audience
+From Brendon Carton to Everyone:  07:55 PM
+Northern hemisphere has more land, hence var.
+From Matthew Beilby to Everyone:  07:55 PM
+a classic!
+From Peter McEniery to Everyone:  07:56 PM
+maybe a classic, but hard to read I reckon
+From Brendon Carton to Everyone:  07:56 PM
+Umm... no; very clear I think.
+From Matthew Beilby to Everyone:  07:56 PM
+I'll give him a pass for 1860
+From Peter McEniery to Everyone:  07:57 PM
+A+
+xkcd
+From Callum Lynch to Everyone:  07:57 PM
+Primer is accurate
+From Myrnelle Jover to Everyone:  07:58 PM
+I like that one
+From Brendon Carton to Everyone:  07:59 PM
+_Everyone_ should watch Primer. Several times.
+From Irina Lumsden to Everyone:  07:59 PM
+the wars give most interesting lines
+From Callum Lynch to Everyone:  07:59 PM
+FYI Primer is a movie about time travel, hence the chaos
+From Irina Lumsden to Everyone:  07:59 PM
+arrow of time is absolute?
+From Darragh Ruddy to Everyone:  08:00 PM
+wow
+From Lin Mo to Everyone:  08:00 PM
+x axis is time
+From Darragh Ruddy to Everyone:  08:00 PM
+nice contrast levels
+From Irina Lumsden to Everyone:  08:00 PM
+categorical values L and P?
+From Peter McEniery to Everyone:  08:01 PM
+who is driving before they get a learners license,...
+From Conrad Leonard to Everyone:  08:01 PM
+I think labelled time points, at which you get L or P
+From Matthew Beilby to Everyone:  08:01 PM
+maybe it's just meant to be scary ;)
+From Irina Lumsden to Everyone:  08:01 PM
+parallel axis?
+From Shirin Ghaffarian Maghool to Everyone:  08:02 PM
+@Matthew: :)
+From Jian Liang to Everyone:  08:03 PM
+purpose is to kill reader’s time
+From Myrnelle Jover to Everyone:  08:03 PM
+This looks like a circular distance matrix? They already clustered the sites by category...
+From Brendon Carton to Everyone:  08:03 PM
+Might work as a Motion Chart
+From Lin Mo to Everyone:  08:03 PM
+the lines don't represent quantitative values so unlikely parallel axis
+From Jian Liang to Everyone:  08:04 PM
+there is no direction for from and to ...
+From Lin Mo to Everyone:  08:05 PM
+I think its the other way around
+nokia is not doing well
+From Conrad Leonard to Everyone:  08:05 PM
+No need for this to be circular, it could be much clearer as a Sankey plot
+From Myrnelle Jover to Everyone:  08:06 PM
+I just don't like circular charts in general.
+From Jafreen Hossain to Everyone:  08:07 PM
+yeah the circular one is not clear
+From Darragh Ruddy to Everyone:  08:07 PM
+Whenever I see a chart like the one on the left, I think of Jeff Goldblum in Jurassic Park
+From Jian Liang to Everyone:  08:07 PM
+instruction: watch vedio
+From Darragh Ruddy to Everyone:  08:07 PM
+Sure you can do it, but should you?
+From Callum Lynch to Everyone:  08:08 PM
+"Instructions: Watch video" is probably a clue that your visualisation is not intuitive
+From Jafreen Hossain to Everyone:  08:10 PM
+Can we generate the data?
+From Myrnelle Jover to Everyone:  08:10 PM
+Are we able to have access to a grading rubric?
+From Shirin Ghaffarian Maghool to Everyone:  08:11 PM
+Yes, It would be available by tomorrow
+From Myrnelle Jover to Everyone:  08:11 PM
+Thank you
+From Shirin Ghaffarian Maghool to Everyone:  08:12 PM
+@Myrnelle: sorry I mean Marking Guide for Proposal assignment.
+From Myrnelle Jover to Everyone:  08:13 PM
+Ah, thank you @Shirin
+From Jafreen Hossain to Everyone:  08:15 PM
+Rather than getting actual data from a source, can we generate that? will that be ok?
+for Assignment 1?
+ok thank you :) 
+ok, thanks so much Shirin and Michael
+From Darragh Ruddy to Everyone:  08:16 PM
+Kaggle datasets are fine?
+From Myrnelle Jover to Everyone:  08:16 PM
+If scraping is part of the R code, I assume that would be no problem?
+From Jian Liang to Everyone:  08:16 PM
+if we need to submit the data, is there limit of data size?
+From Myrnelle Jover to Everyone:  08:17 PM
+Okay thank you
+From Jian Liang to Everyone:  08:17 PM
+Thank you!
+From Callum Lynch to Everyone:  08:17 PM
+What's the Moodle limit for file size?
+From Shirin Ghaffarian Maghool to Everyone:  08:17 PM
+500 MB
+From Callum Lynch to Everyone:  08:17 PM
+Thank you Shirin
+From Darragh Ruddy to Me:  (Privately) 08:20 PM
+Hi Dariush, do you still want to work on assingment 2 together?
+From Kye Gregory to Everyone:  08:21 PM
+how many Qs?
+From Shirin Ghaffarian Maghool to Everyone:  08:21 PM
+Around 30
+From Myrnelle Jover to Everyone:  08:22 PM
+What is the format of the quiz? Written answer or multiple choice?
+From Matthew Beilby to Everyone:  08:22 PM
+mc
+From Myrnelle Jover to Everyone:  08:22 PM
+Thank you
+From Callum Lynch to Everyone:  08:22 PM
+MC and short answer Michael just said
+From Myrnelle Jover to Everyone:  08:22 PM
+I missed it, went to get a drink. Thanks for updating me!
+From Matthew Beilby to Everyone:  08:22 PM
+oops sorry, missed mc part (and I was here!)
+the short answer rather
+From Shirin Ghaffarian Maghool to Everyone:  08:23 PM
+Short answer and MCQ
+From Brendon Carton to Everyone:  08:23 PM
+Clean data?
+From Minjoo Park to Everyone:  08:23 PM
+for Assignment 3 does it need to be interactive or static will be OK ? 
+From Shirin Ghaffarian Maghool to Everyone:  08:24 PM
+For As3, It should be interactive visualisation
+@brendon: Sorry I did not get your question?
+From Myrnelle Jover to Everyone:  08:25 PM
+Age
+From Irina Lumsden to Everyone:  08:26 PM
+whats diverging?
+From Minjoo Park to Everyone:  08:26 PM
+thanx Shirin 
+From Callum Lynch to Everyone:  08:28 PM
+Irina, from the textbook: "diverging in which case it can be understood as two sequences going in opposite directions, e..g. like/dislike scales from -5 to 5 are diverging around the neutral value of 0"
+From Myrnelle Jover to Everyone:  08:28 PM
+Would diverging be like psych scales between -5 to 5?
+From Irina Lumsden to Everyone:  08:28 PM
+@Callum, thank you
+From Conrad Leonard to Everyone:  08:28 PM
+Likert scale
+From Irina Lumsden to Everyone:  08:29 PM
+deviation from the norm?
+From Jian Liang to Everyone:  08:29 PM
+complex number?
+From Patrick Kelly to Everyone:  08:29 PM
+with the key: value definition are we lumping structured documents into tabular - like JSON?
+From Me to Darragh Ruddy:  (Privately) 08:29 PM
+Hi Darragh. Sure. Yes. My email address: dria0001@monash.edu. Phone 0430930900
+From Matthew Beilby to Everyone:  08:30 PM
+so, degrees of rotation, what would that be?
+From Conrad Leonard to Everyone:  08:30 PM
+cyclical
+From Matthew Beilby to Everyone:  08:30 PM
+I was thinking that
+but its also sequential?
+and also goes both directions?
+From Darragh Ruddy to Me:  (Privately) 08:31 PM
+Great, I think this week is all about the quiz and getting data ready for assignment 1, so should we begin looking at assignment 2 after the quiz is done?
+From Jafreen Hossain to Everyone:  08:32 PM
+bubble plots 
+From Darragh Ruddy to Me:  (Privately) 08:32 PM
+email: drud0003@student.monash.edu
+ph: 0433464683
+From Me to Darragh Ruddy:  (Privately) 08:32 PM
+Sure. Yes. Thanks for that.
+From Conrad Leonard to Everyone:  08:33 PM
+@Matt I guess so, depends what's important - there might even be applications where total angle rotated through is important, not absolute positional rotation, so 360deg wouldn't be the same as 0 or 720
+From Callum Lynch to Everyone:  08:33 PM
+So if JSON doesn't qualify, what about something like a document database, which has data represented in JSON but also has a defined (albeit flexible) schema?
+From Darragh Ruddy to Me:  (Privately) 08:34 PM
+Great :)
+From Matthew Beilby to Everyone:  08:34 PM
+thanks Conrad :)
+From Brendon Carton to Everyone:  08:35 PM
+Which one is applicable to your audience / readership?
+From Lin Mo to Everyone:  08:35 PM
+forrest plots
+From Jian Liang to Everyone:  08:37 PM
+without the slide, we don’t have the link for this week’s folder
+or I missed sth
+From Matthew Beilby to Everyone:  08:37 PM
+we cant click, its a video feed
+From Jafreen Hossain to Everyone:  08:38 PM
+can we have the link here?
+From Irina Lumsden to Everyone:  08:38 PM
+could someone paste into chat?
+From Zichao Zhang to Everyone:  08:38 PM
+You can type the link
+From Peter McEniery to Everyone:  08:38 PM
+maybe Michael can hahahah
+From Michael Niemann to Everyone:  08:38 PM
+https://docs.google.com/document/d/1-r40sbmD4czVlp_ZCZ2CmsH9rGdIGzrewM9YDnFHhAg/edit?usp=sharing
+From Matthew Beilby to Everyone:  08:38 PM
+:D
+From Conrad Leonard to Everyone:  08:41 PM
+wow, Violin plot, Chernoff faces in the same group; I hope I'm not in that one :)
+No, they're not
+haha
+From Michael Niemann to Everyone:  08:44 PM
+Group 1: https://docs.google.com/presentation/d/1jDNDhGyn8Jd6j78QzIFauaIhHut4vbIaJPvT_BRb9J4/edit?usp=sharing 
+Group 2: https://docs.google.com/presentation/d/1wywItHnL7L9F8DwoYkaIFRxrIm2XdY9bhS8F8uWGhKk/edit?usp=sharing 
+Group 3: https://docs.google.com/presentation/d/1UbLrBDI1NENpHwRL0jhmDfQ3_9ZBnydEHt8TeY769-g/edit?usp=sharing 
+Group 4: https://docs.google.com/presentation/d/1LZq0KVPRN1h7exwlvMZK7cS52SBxkj1mbfxtr8YPSu4/edit?usp=sharing 
+Group 5: https://docs.google.com/presentation/d/1IukX8sS-d8hU_8mRwA3JtrImvdIL2k-oTFJdfBSIetE/edit?usp=sharing 
+Group 6: https://docs.google.com/presentation/d/1IukX8sS-d8hU_8mRwA3JtrImvdIL2k-oTFJdfBSIetE/edit?usp=sharing
+https://drive.google.com/drive/folders/1272x-iA4C5G0YR_IOEsBHMfRuCUVLxyZ?usp=sharing
+From Matthew Beilby to Everyone:  08:44 PM
+guys copy the groups
+I think when we brreak
+we lose chat
+From Myrnelle Jover to Everyone:  08:44 PM
+I'm going to put it in the Google Doc
+From Matthew Beilby to Everyone:  08:45 PM
+ah ok sorry!
